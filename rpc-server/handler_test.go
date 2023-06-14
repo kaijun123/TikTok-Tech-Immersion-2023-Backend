@@ -39,8 +39,6 @@ func TestIMServiceImpl_Send(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			//s := &IMServiceImpl{}
 			//got, err := s.Send(tt.args.ctx, tt.args.req)
-			//assert.True(t, errors.Is(err, tt.wantErr))
-			//assert.NotNil(t, got)
 			assert.True(t, true)
 		})
 	}
