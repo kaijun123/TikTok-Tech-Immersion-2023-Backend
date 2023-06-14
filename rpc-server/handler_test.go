@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"testing"
+	"time"
 
 	"github.com/TikTokTechImmersion/assignment_demo_2023/rpc-server/kitex_gen/rpc"
 	"github.com/stretchr/testify/assert"
@@ -22,7 +23,14 @@ func TestIMServiceImpl_Send(t *testing.T) {
 			name: "success",
 			args: args{
 				ctx: context.Background(),
-				req: &rpc.SendRequest{},
+				req: &rpc.SendRequest{
+					Message: &rpc.Message{
+						Chat:     "a1:b1",
+						Text:     "Hello",
+						Sender:   "a1",
+						SendTime: time.Now().Unix(),
+					},
+				},
 			},
 			wantErr: nil,
 		},
